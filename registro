@@ -1,0 +1,74 @@
+'use strict';
+
+class Person {
+    name;
+    age;
+    gender;
+    constructor(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+console.log(new Person());
+
+class Student extends Person {
+    subject;
+    group;
+    constructor(name, age, gender, subject, group){
+        super(name, age, gender);
+        this.subject = subject;
+        this.group = group;
+    }
+    static registerStudents(names, age, gender, subject, group) {
+        return names.map((name, index) => {
+            return new Student(name, age[index], gender[index], subject[index], group[index]);
+        });
+    }
+}
+
+class Teacher extends Person {
+    subject;
+    group;
+    studentList;
+    constructor(name, age, gender, subject, group, ) {
+        super(name, age, gender);
+        this.subject = subject;
+        this.group = group;
+        this.studentList = studentList;
+
+    }
+    static teacherList(teacherNames, teacherAge, teacherGender, teacherSubject, teacherGroup, studentList) {
+        return teacherNames.map((name, index) => {
+            return new Teacher(name, teacherAge[index], teacherGender[index], teacherSubject[index], teacherGroup[index], studentList[index]);
+        });
+    }
+    // Ejercicio sin finalizar. Seguir aquí. Acabar el método.
+    addStudents() {
+        if (registerStudents.constructor.subject == this.teacherList.constructor.teacherSubject) {
+            registerStudents.push(this.studentList);
+        }
+    }
+}
+
+
+
+const names = ['Brais', 'Anyi', 'Daniel', 'Jandro', 'Carmen', 'Aitana'];
+const age = [28, 32, 38, 28, 24, 25];
+const gender = ['male', 'female', 'male', 'male', 'female', 'female'];
+const subject = ['js', 'css', 'js', 'css', 'html', 'html'];
+const group = ['CO', 'VI', 'CO', 'VI', 'CO', 'CO'];
+
+const students = Student.registerStudents(names, age, gender, subject, group);
+console.log(students);
+
+
+const teacherNames = ['Berto', 'Iván', 'María'];
+const teacherAge = [42, 38, 40];
+const teacherGender = ['male', 'male', 'female'];
+const teacherSubject = ['html', 'js', 'css'];
+const teacherGroup = ['CO', 'CO', 'VI'];
+const studentList = [];
+
+const teachers = Teacher.teacherList(teacherNames, teacherAge, teacherGender, teacherSubject, teacherGroup, studentList);
+console.log(teachers);
