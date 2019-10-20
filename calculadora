@@ -1,0 +1,36 @@
+* * * * * * * * * * * * * * * *
+*  1. C A L C U L A D O R A   *
+* * * * * * * * * * * * * * * *
+
+let operation = prompt(`¿Qué operación quieres hacer?
+1. Sumar, escribe +
+2. Restar, escribe -
+3. Multiplicar, escribe *
+4. Dividir, escribe /
+5. Elevar el primer número al segundo, escribe **`);
+let n1 = prompt('Escribe el 1er número');
+let n2 = prompt('Escribe el 2º número');
+
+
+function myCalculator (n1, n2, operation) {
+    if (operation === '+') {
+        let result = parseFloat(n1) + parseFloat(n2);
+        console.log(result);
+    } else if (operation === '-') {
+        let result = parseFloat(n1) - parseFloat(n2);
+        console.log(result);
+    } else if (operation === '*') {
+        let result = parseFloat(n1) * parseFloat(n2);
+        console.log(result);
+    } else if (operation === '/') {
+        let result = parseFloat(n1) / parseFloat(n2);
+        console.log(result);
+    } else if (operation === '**') {
+        let result = parseFloat(n1) ** parseFloat(n2);
+        console.log(result);
+    } else {
+        console.log('Valor introducido incorrecto');
+    }
+}
+
+myCalculator(n1, n2, operation);
