@@ -1,0 +1,15 @@
+let totalScore = 0;
+
+
+function rollDice() {
+    let diceResult = parseInt(6*Math.random()+1);
+    return diceResult;
+}
+
+while (totalScore < 50) {
+    let newRollDice = rollDice();
+    totalScore = totalScore + newRollDice;
+    console.log('diceResult:', newRollDice, 'totalScore:', totalScore);
+}
+console.log('Has llegado a 50 puntos');
+alert('Has llegado a 50 puntos');
